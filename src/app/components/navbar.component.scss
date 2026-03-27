@@ -1,0 +1,19 @@
+/* Usuwamy isolation: isolate – powodowało, że fixed children (header, menu)
+   były odizolowane i przykrywane przez main z-[1] */
+
+.mobile-menu-backdrop {
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.mobile-menu-root.is-open .mobile-menu-backdrop {
+  opacity: 0.95;
+}
+
+.mobile-menu-panel {
+  background-color: #020308;
+  box-shadow:
+    -20px 0 48px rgba(0, 0, 0, 0.95),
+    inset 1px 0 0 rgba(0, 212, 255, 0.12);
+}

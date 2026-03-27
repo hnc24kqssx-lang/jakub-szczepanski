@@ -1,0 +1,20 @@
+.hero-scan {
+  animation: hero-scan-move 9s linear infinite;
+}
+
+@keyframes hero-scan-move {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.portfolio-section {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}

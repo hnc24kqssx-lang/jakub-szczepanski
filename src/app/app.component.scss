@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+.cyber-bg-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cyber-bg-grid {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.045;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.5) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: cyber-grid-drift 80s linear infinite;
+}
+
+.cyber-bg-diagonal {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background: repeating-linear-gradient(
+    -18deg,
+    transparent,
+    transparent 2px,
+    rgba(30, 58, 95, 0.6) 2px,
+    rgba(30, 58, 95, 0.6) 3px
+  );
+  animation: cyber-diagonal-shift 45s linear infinite;
+}
+
+.cyber-bg-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40%;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 212, 255, 0.06) 45%,
+    transparent 100%
+  );
+  animation: cyber-scan-slow 14s ease-in-out infinite;
+}
+
+.cyber-bg-pulse {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 45% at 50% 40%,
+    rgba(0, 212, 255, 0.07) 0%,
+    transparent 55%
+  );
+  animation: cyber-pulse-glow 9s ease-in-out infinite;
+}
+
+@keyframes cyber-grid-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(56px, 56px);
+  }
+}
+
+@keyframes cyber-diagonal-shift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(24px);
+  }
+}
+
+@keyframes cyber-scan-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(120vh);
+    opacity: 0.85;
+  }
+}
+
+@keyframes cyber-pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}

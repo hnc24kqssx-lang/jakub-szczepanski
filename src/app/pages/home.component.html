@@ -1,0 +1,493 @@
+<main class="relative pt-[56px] md:pt-[60px]">
+  <!-- Hero — pełne tło, bez globalnej warstwy cyber (izolacja od app cyber-bg) -->
+  <section
+    id="hero"
+    class="relative z-[2] min-h-[88vh] overflow-hidden border-b border-cyber-line/40 bg-cyber-void"
+    aria-label="Wprowadzenie"
+  >
+    <div class="absolute inset-0 bg-cyber-void">
+      @for (src of heroImages; track src; let i = $index) {
+        <img
+          [src]="src"
+          alt=""
+          role="presentation"
+          decoding="async"
+          [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+          [loading]="i === 0 ? 'eager' : 'lazy'"
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1100ms] ease-out"
+          [class.opacity-100]="activeSlide() === i"
+          [class.opacity-0]="activeSlide() !== i"
+        />
+      }
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-cyber-void/20 via-cyber-deep/75 to-cyber-void"
+      ></div>
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style="
+          background-image: linear-gradient(rgba(0, 212, 255, 0.35) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.35) 1px, transparent 1px);
+          background-size: 48px 48px;
+        "
+      ></div>
+      <div
+        class="hero-scan pointer-events-none absolute inset-0 opacity-20"
+        style="
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(0, 212, 255, 0.12) 50%,
+            transparent
+          );
+          height: 120%;
+        "
+      ></div>
+    </div>
+
+    <!-- HUD left -->
+    <div
+      class="absolute left-4 top-24 z-10 hidden font-mono text-[10px] text-cyber-ice/80 sm:block md:left-10 md:top-32"
+    >
+      <div
+        class="flex h-16 w-16 items-center justify-center rounded-full border border-cyber-cyan/35 bg-cyber-panel/40 shadow-neon-sm backdrop-blur-sm"
+      >
+        <span class="text-lg text-cyber-cyan">▲</span>
+      </div>
+      <p class="mt-3 max-w-[100px] leading-tight">
+        INF.02<br />
+        <span class="text-cyber-cyan">/</span> INF.03
+      </p>
+    </div>
+
+    <!-- HUD right -->
+    <div
+      class="absolute right-4 top-28 z-10 hidden font-mono text-[10px] text-cyber-ice/80 sm:block md:right-10 md:top-36"
+    >
+      <div
+        class="flex h-16 w-16 items-center justify-center rounded-full border border-cyber-cyan/35 bg-cyber-panel/40 shadow-neon-sm backdrop-blur-sm"
+      >
+        <span class="text-2xl text-cyber-cyan">✦</span>
+      </div>
+      <p class="mt-3 text-right">LIVE<br />PREVIEW</p>
+    </div>
+
+    <!-- Giant name -->
+    <div
+      class="relative z-[2] mx-auto flex min-h-[78vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-28 md:px-10 md:pb-24"
+    >
+      <p
+        class="mb-2 max-w-xl font-mono text-xs uppercase tracking-[0.35em] text-cyber-ice/85 md:text-sm"
+      >
+        Tworzenie stron internetowych · interfejsy premium
+      </p>
+      <h1
+        class="font-display text-[clamp(2.75rem,12vw,8rem)] font-bold uppercase leading-[0.85] tracking-tight text-white text-glow animate-glitch"
+      >
+        Jakub<br class="sm:hidden" />
+        Szczepański
+      </h1>
+      <p
+        class="mt-6 max-w-lg font-body text-base leading-relaxed text-slate-300 md:text-lg"
+      >
+        Projektuję i koduję witryny — szybkie, czytelne i
+        nastawione na konwersję. Jeśli szukasz partnera technicznego z dokumentem INF za pasem,
+        jesteś we właściwym miejscu.
+      </p>
+
+      <div
+        class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <!-- Latest-style card -->
+        <a
+          href="/#portfolio"
+          class="group flex max-w-sm gap-4 rounded border border-cyber-line/60 bg-cyber-deep/80 p-3 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.08)] backdrop-blur-md transition hover:border-cyber-cyan/40 active:scale-[0.99]"
+        >
+          <div
+            class="h-16 w-24 shrink-0 rounded bg-gradient-to-br from-cyber-navy to-cyber-panel"
+          ></div>
+          <div class="min-w-0">
+            <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-cyber-cyan">
+              Ostatni kierunek
+            </p>
+            <p class="truncate font-body text-sm text-slate-200">Portfolio — podgląd na żywo</p>
+            <span
+              class="mt-1 inline-flex items-center gap-1 font-mono text-xs text-cyber-ice/80 transition group-hover:gap-2"
+              >Zobacz realizacje →</span
+            >
+          </div>
+        </a>
+
+        <div class="max-w-md text-right">
+          <p class="font-body text-sm italic text-slate-400 md:text-base">
+            Dbam o to, by Twoja marka brzmiała nowocześnie w sieci — od pierwszego kontaktu po
+            wdrożenie.
+          </p>
+          <a
+            href="/#portfolio"
+            class="mt-4 inline-flex items-center gap-3 rounded-full border border-cyber-cyan/45 bg-cyber-cyan/10 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/20 active:scale-[0.98]"
+          >
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full border border-cyber-cyan/50"
+              >▶</span
+            >
+            Portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] tracking-widest text-cyber-ice/50"
+    >
+      SCROLL
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section
+    id="stack"
+    class="border-b border-cyber-line/35 bg-cyber-deep/50 py-16 md:py-24"
+    appScrollReveal
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-10">
+      <div class="mb-10 max-w-2xl">
+        <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Stack</p>
+        <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
+          Technologie i API
+        </h2>
+        <p class="mt-4 font-body text-slate-400">
+          Zestaw narzędzi, który pozwala budować szybkie fronty i bezpiecznie łączyć je z
+          backendem oraz ekosystemem agentów AI — tak, by Twój biznes mógł automatyzować bez
+          utraty kontroli.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        @for (g of stackGroups; track g.title) {
+          <div
+            class="rounded-lg border border-cyber-line/50 bg-cyber-panel/40 p-6 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.06)] backdrop-blur-sm"
+          >
+            <h3 class="font-mono text-sm uppercase tracking-[0.2em] text-cyber-ice">
+              {{ g.title }}
+            </h3>
+            <ul class="mt-4 space-y-2">
+              @for (item of g.items; track item) {
+                <li
+                  class="flex items-start gap-2 font-body text-sm text-slate-300 before:mt-2 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-cyber-cyan/80 before:content-['']"
+                >
+                  {{ item }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section
+    id="certyfikaty"
+    class="border-b border-cyber-line/35 py-16 md:py-24"
+    appScrollReveal
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-10">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">
+            Wykształcenie i certyfikaty
+          </p>
+          <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
+            Technikum + INF
+          </h2>
+          <p class="mt-4 font-body leading-relaxed text-slate-400">
+            Ukończyłem
+            <strong class="font-medium text-slate-200">technikum informatyczne</strong>, co dało mi
+            solidne podstawy z zakresu inżynierii oprogramowania, baz danych i administracji
+            systemami. Na tej bazie zbudowałem ścieżkę jako
+            <strong class="font-medium text-slate-200">programista stron internetowych</strong> —
+            od projektowania interfejsów po wdrożenia produkcyjne.
+          </p>
+          <p class="mt-4 font-body leading-relaxed text-slate-400">
+            Posiadam certyfikaty
+            <strong class="text-cyber-ice">INF.02</strong> oraz
+            <strong class="text-cyber-ice">INF.03</strong>: potwierdzają one umiejętność
+            tworzenia i administrowania stronami internetowymi oraz prowadzenia projektów
+            informatycznych — od analizy potrzeb, przez implementację, po testy i dokumentację.
+            Dla Ciebie oznacza to partnera, który rozumie nie tylko „jak to wygląda”, ale też
+            <em class="text-slate-300 not-italic">jak to utrzymać i rozwinąć</em>.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article
+            class="rounded-lg border border-cyber-cyan/25 bg-gradient-to-br from-cyber-panel to-cyber-deep p-6 shadow-neon"
+          >
+            <p class="font-mono text-xs text-cyber-cyan">Certyfikat</p>
+            <p class="mt-2 font-display text-4xl text-white">INF.02</p>
+            <p class="mt-3 font-body text-sm text-slate-400">
+              Tworzenie i administrowanie stronami internetowymi oraz aplikacjami bazodanowymi.
+            </p>
+          </article>
+          <article
+            class="rounded-lg border border-cyber-cyan/25 bg-gradient-to-br from-cyber-deep to-cyber-panel p-6 shadow-neon"
+          >
+            <p class="font-mono text-xs text-cyber-cyan">Certyfikat</p>
+            <p class="mt-2 font-display text-4xl text-white">INF.03</p>
+            <p class="mt-3 font-body text-sm text-slate-400">
+              Projektowanie, programowanie i testowanie aplikacji oraz prowadzenie prac
+              programistycznych.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section
+    id="portfolio"
+    class="portfolio-section border-b border-cyber-line/35 bg-cyber-deep/40 py-16 md:py-24"
+    appScrollReveal
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-10">
+      <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Projekty</p>
+          <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
+            Wybrane realizacje
+          </h2>
+          <p class="mt-4 font-body text-slate-400">
+            Kliknij kafelek, aby zobaczyć stack, API i krótki opis — modal rozwinie się z miejsca
+            karty. „Live demo” otwiera stronę w nowej karcie bez otwierania modala.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        @for (p of portfolioProjects; track p.id) {
+          <article
+            class="portfolio-card group flex cursor-pointer flex-col overflow-hidden rounded-xl border border-cyber-line/45 bg-cyber-panel/35 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.06)] transition hover:border-cyber-cyan/35 hover:shadow-neon focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-cyan"
+            tabindex="0"
+            role="button"
+            [attr.aria-label]="'Szczegóły projektu: ' + p.title"
+            (click)="openPortfolioModal(p, $event)"
+            (keydown.enter)="openPortfolioModal(p, $event)"
+            (keydown.space)="$event.preventDefault(); openPortfolioModal(p, $event)"
+          >
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-cyber-void">
+              @if (p.isPrivate) {
+                <div
+                  class="flex h-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-cyber-navy/40 to-cyber-void p-6"
+                >
+                  <svg
+                    class="h-12 w-12 text-cyber-cyan/45"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.25"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <p class="text-center font-mono text-[11px] text-slate-500">
+                    Aplikacja prywatna — brak podglądu
+                  </p>
+                </div>
+              } @else {
+                <img
+                  [src]="p.previewImage"
+                  [alt]="'Miniatura: ' + p.title"
+                  class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              }
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-cyber-void/90 via-cyber-void/20 to-transparent opacity-60 transition duration-300 group-hover:opacity-90"
+              ></div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 transition duration-300 group-hover:pointer-events-auto group-hover:opacity-100"
+              >
+                <a
+                  [href]="p.demoUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="pointer-events-auto rounded-full border border-cyber-cyan/60 bg-cyber-cyan/15 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 active:scale-[0.97]"
+                  (click)="$event.stopPropagation()"
+                >
+                  Live demo →
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-1 flex-col gap-3 p-4">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="font-body text-base font-semibold leading-snug text-white">
+                  {{ p.title }}
+                </h3>
+                <span
+                  class="shrink-0 rounded-md border border-cyber-line/60 bg-cyber-deep/80 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-cyber-ice"
+                  >{{ p.primaryTag }}</span
+                >
+              </div>
+              <p class="font-body text-sm leading-relaxed text-slate-400">
+                {{ p.description }}
+              </p>
+              <div class="mt-auto flex flex-wrap gap-1.5 pt-1">
+                @for (tag of p.stack.slice(0, 4); track tag) {
+                  <span
+                    class="rounded-md border border-cyber-line/40 bg-cyber-void/60 px-2 py-0.5 font-mono text-[10px] text-slate-300"
+                    >{{ tag }}</span
+                  >
+                }
+                @if (p.stack.length > 4) {
+                  <span
+                    class="rounded-md border border-cyber-cyan/25 bg-cyber-cyan/10 px-2 py-0.5 font-mono text-[10px] text-cyber-cyan"
+                    >+{{ p.stack.length - 4 }}</span
+                  >
+                }
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="border-b border-cyber-line/35 py-16 md:py-20" appScrollReveal>
+    <div
+      class="mx-auto max-w-7xl bg-gradient-to-r from-cyber-navy/80 via-cyber-panel/60 to-cyber-navy/80 px-6 py-12 md:px-14 md:py-16"
+    >
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div class="max-w-xl">
+          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">CTA</p>
+          <h2 class="mt-2 font-display text-3xl uppercase text-white md:text-4xl">
+            Zróbmy stronę, która sprzedaje
+          </h2>
+          <p class="mt-3 font-body text-slate-400">
+            Krótki brief, jasny termin, iteracja po feedbacku. Napisz — wrócę z propozycją działań i
+            zakresem.
+          </p>
+        </div>
+        <a
+          href="/#kontakt"
+          class="inline-flex items-center gap-3 rounded-full border border-cyber-cyan bg-cyber-cyan/15 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 active:scale-[0.98]"
+        >
+          Rozpocznij kontakt
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="kontakt" class="py-16 md:py-24" appScrollReveal>
+    <div class="mx-auto max-w-7xl px-4 md:px-10">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Kontakt</p>
+          <h2 class="mt-2 font-display text-4xl uppercase text-white md:text-5xl">Napisz wiadomość</h2>
+          <p class="mt-4 font-body text-slate-400">
+            Formularz wysyła wiadomość przez EmailJS. Uzupełnij klucze w pliku środowiskowym przed
+            wdrożeniem na Vercel.
+          </p>
+        </div>
+        <form
+          class="space-y-5 rounded-xl border border-cyber-line/50 bg-cyber-panel/35 p-6 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.06)] backdrop-blur-sm"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+        >
+          <div>
+            <label for="name" class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
+              >Imię i nazwisko</label
+            >
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              autocomplete="name"
+              class="w-full rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
+              placeholder="Jan Kowalski"
+            />
+            @if (contactForm.controls.name.touched && contactForm.controls.name.invalid) {
+              <p class="mt-1 text-xs text-red-400">Podaj co najmniej 2 znaki.</p>
+            }
+          </div>
+          <div>
+            <label for="email" class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
+              >E-mail</label
+            >
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              class="w-full rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
+              placeholder="jan@firma.pl"
+            />
+            @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
+              <p class="mt-1 text-xs text-red-400">Podaj poprawny adres e-mail.</p>
+            }
+          </div>
+          <div>
+            <label
+              for="message"
+              class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
+              >Wiadomość</label
+            >
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              class="w-full resize-y rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
+              placeholder="Opisz projekt, budżet i termin..."
+            ></textarea>
+            @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
+              <p class="mt-1 text-xs text-red-400">Minimum 10 znaków.</p>
+            }
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-lg border border-cyber-cyan/50 bg-cyber-cyan/15 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 disabled:opacity-50 active:scale-[0.99]"
+            [disabled]="formStatus() === 'sending'"
+          >
+            @if (formStatus() === 'sending') {
+              Wysyłanie…
+            } @else {
+              Wyślij
+            }
+          </button>
+          @if (formStatus() === 'ok') {
+            <p class="font-mono text-sm text-emerald-400" role="status">Wysłano. Dziękuję — odezwę się wkrótce.</p>
+          }
+          @if (formStatus() === 'err') {
+            <p class="font-mono text-sm text-red-400" role="alert">
+              Nie udało się wysłać. Skonfiguruj EmailJS w environment lub spróbuj ponownie.
+            </p>
+          }
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <app-portfolio-modal
+    [project]="modalProject()"
+    [originRect]="modalOrigin()"
+    (closed)="onPortfolioModalClosed()"
+  />
+
+  <footer class="border-t border-cyber-line/40 py-10">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center font-mono text-xs text-slate-500 md:flex-row md:text-left md:px-10"
+    >
+      <span>© {{ currentYear }} Jakub Szczepański. Wszystkie prawa zastrzeżone.</span>
+      <a
+        routerLink="/polityka-prywatnosci"
+        class="text-cyber-cyan/80 underline-offset-4 transition hover:text-cyber-cyan hover:underline active:scale-[0.98]"
+        >Polityka prywatności</a
+      >
+    </div>
+  </footer>
+</main>
