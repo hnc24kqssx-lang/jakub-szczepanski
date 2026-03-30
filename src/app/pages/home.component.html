@@ -184,6 +184,44 @@
     </div>
   </section>
 
+  <!-- Process -->
+  <section
+    id="proces-wspolpracy"
+    class="border-b border-cyber-line/35 bg-cyber-deep/45 py-16 md:py-24"
+    appScrollReveal
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-10">
+      <div class="mb-10 max-w-3xl">
+        <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Jak wygląda współpraca</p>
+        <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
+          Proces krok po kroku
+        </h2>
+        <p class="mt-4 font-body text-slate-400">
+          Pracuję w prostym, przejrzystym modelu. W każdym etapie wiesz, co jest robione, po co i
+          kiedy dostaniesz kolejny efekt.
+        </p>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        @for (step of processSteps; track step.id) {
+          <article
+            class="group relative overflow-hidden rounded-xl border border-cyber-line/50 bg-cyber-panel/35 p-5 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)] transition hover:border-cyber-cyan/45 hover:shadow-neon"
+          >
+            <div
+              class="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyber-cyan/10 blur-2xl transition group-hover:bg-cyber-cyan/20"
+            ></div>
+            <p class="font-mono text-xs tracking-[0.35em] text-cyber-cyan">{{ step.id }}</p>
+            <h3 class="mt-3 font-body text-2xl font-semibold leading-tight text-white">{{ step.title }}</h3>
+            <p class="mt-3 font-body text-sm leading-relaxed text-slate-300">
+              {{ step.description }}
+            </p>
+            <div class="mt-4 h-px w-full bg-gradient-to-r from-cyber-cyan/40 via-cyber-line/40 to-transparent"></div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Certificates -->
   <section
     id="certyfikaty"
@@ -200,21 +238,15 @@
             Technikum + INF
           </h2>
           <p class="mt-4 font-body leading-relaxed text-slate-400">
-            Ukończyłem
-            <strong class="font-medium text-slate-200">technikum informatyczne</strong>, co dało mi
-            solidne podstawy z zakresu inżynierii oprogramowania, baz danych i administracji
-            systemami. Na tej bazie zbudowałem ścieżkę jako
-            <strong class="font-medium text-slate-200">programista stron internetowych</strong> —
-            od projektowania interfejsów po wdrożenia produkcyjne.
+            Ukończyłem technikum informatyczne i uzyskałem tytuł
+            <strong class="font-medium text-cyber-ice">Technik IT</strong>. Dzięki temu mam solidne
+            podstawy w administracji systemami, sieciach i tworzeniu aplikacji webowych.
           </p>
           <p class="mt-4 font-body leading-relaxed text-slate-400">
             Posiadam certyfikaty
             <strong class="text-cyber-ice">INF.02</strong> oraz
-            <strong class="text-cyber-ice">INF.03</strong>: potwierdzają one umiejętność
-            tworzenia i administrowania stronami internetowymi oraz prowadzenia projektów
-            informatycznych — od analizy potrzeb, przez implementację, po testy i dokumentację.
-            Dla Ciebie oznacza to partnera, który rozumie nie tylko „jak to wygląda”, ale też
-            <em class="text-slate-300 not-italic">jak to utrzymać i rozwinąć</em>.
+            <strong class="text-cyber-ice">INF.03</strong>, które potwierdzają praktyczne umiejętności
+            od infrastruktury IT po strony i aplikacje internetowe.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
@@ -224,7 +256,8 @@
             <p class="font-mono text-xs text-cyber-cyan">Certyfikat</p>
             <p class="mt-2 font-display text-4xl text-white">INF.02</p>
             <p class="mt-3 font-body text-sm text-slate-400">
-              Tworzenie i administrowanie stronami internetowymi oraz aplikacjami bazodanowymi.
+              Administracja i eksploatacja systemów komputerowych, urządzeń peryferyjnych i
+              lokalnych sieci komputerowych.
             </p>
           </article>
           <article
@@ -233,8 +266,7 @@
             <p class="font-mono text-xs text-cyber-cyan">Certyfikat</p>
             <p class="mt-2 font-display text-4xl text-white">INF.03</p>
             <p class="mt-3 font-body text-sm text-slate-400">
-              Projektowanie, programowanie i testowanie aplikacji oraz prowadzenie prac
-              programistycznych.
+              Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych.
             </p>
           </article>
         </div>
@@ -362,112 +394,20 @@
     >
       <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div class="max-w-xl">
-          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">CTA</p>
+          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Kontakt</p>
           <h2 class="mt-2 font-display text-3xl uppercase text-white md:text-4xl">
-            Zróbmy stronę, która sprzedaje
+            Porozmawiajmy o Twoim projekcie
           </h2>
           <p class="mt-3 font-body text-slate-400">
-            Krótki brief, jasny termin, iteracja po feedbacku. Napisz — wrócę z propozycją działań i
-            zakresem.
+            Przejdź do podstrony kontaktu, gdzie znajdziesz formularz i moje dane kontaktowe.
           </p>
         </div>
         <a
-          href="/#kontakt"
+          routerLink="/kontakt"
           class="inline-flex items-center gap-3 rounded-full border border-cyber-cyan bg-cyber-cyan/15 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 active:scale-[0.98]"
         >
           Rozpocznij kontakt
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="kontakt" class="py-16 md:py-24" appScrollReveal>
-    <div class="mx-auto max-w-7xl px-4 md:px-10">
-      <div class="grid gap-12 lg:grid-cols-2">
-        <div>
-          <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Kontakt</p>
-          <h2 class="mt-2 font-display text-4xl uppercase text-white md:text-5xl">Napisz wiadomość</h2>
-          <p class="mt-4 font-body text-slate-400">
-            Formularz wysyła wiadomość przez EmailJS. Uzupełnij klucze w pliku środowiskowym przed
-            wdrożeniem na Vercel.
-          </p>
-        </div>
-        <form
-          class="space-y-5 rounded-xl border border-cyber-line/50 bg-cyber-panel/35 p-6 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.06)] backdrop-blur-sm"
-          [formGroup]="contactForm"
-          (ngSubmit)="onSubmit()"
-          novalidate
-        >
-          <div>
-            <label for="name" class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
-              >Imię i nazwisko</label
-            >
-            <input
-              id="name"
-              type="text"
-              formControlName="name"
-              autocomplete="name"
-              class="w-full rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
-              placeholder="Jan Kowalski"
-            />
-            @if (contactForm.controls.name.touched && contactForm.controls.name.invalid) {
-              <p class="mt-1 text-xs text-red-400">Podaj co najmniej 2 znaki.</p>
-            }
-          </div>
-          <div>
-            <label for="email" class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
-              >E-mail</label
-            >
-            <input
-              id="email"
-              type="email"
-              formControlName="email"
-              autocomplete="email"
-              class="w-full rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
-              placeholder="jan@firma.pl"
-            />
-            @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
-              <p class="mt-1 text-xs text-red-400">Podaj poprawny adres e-mail.</p>
-            }
-          </div>
-          <div>
-            <label
-              for="message"
-              class="mb-1 block font-mono text-xs uppercase tracking-widest text-cyber-ice"
-              >Wiadomość</label
-            >
-            <textarea
-              id="message"
-              formControlName="message"
-              rows="5"
-              class="w-full resize-y rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2 active:scale-[0.995]"
-              placeholder="Opisz projekt, budżet i termin..."
-            ></textarea>
-            @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
-              <p class="mt-1 text-xs text-red-400">Minimum 10 znaków.</p>
-            }
-          </div>
-          <button
-            type="submit"
-            class="w-full rounded-lg border border-cyber-cyan/50 bg-cyber-cyan/15 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 disabled:opacity-50 active:scale-[0.99]"
-            [disabled]="formStatus() === 'sending'"
-          >
-            @if (formStatus() === 'sending') {
-              Wysyłanie…
-            } @else {
-              Wyślij
-            }
-          </button>
-          @if (formStatus() === 'ok') {
-            <p class="font-mono text-sm text-emerald-400" role="status">Wysłano. Dziękuję — odezwę się wkrótce.</p>
-          }
-          @if (formStatus() === 'err') {
-            <p class="font-mono text-sm text-red-400" role="alert">
-              Nie udało się wysłać. Skonfiguruj EmailJS w environment lub spróbuj ponownie.
-            </p>
-          }
-        </form>
       </div>
     </div>
   </section>

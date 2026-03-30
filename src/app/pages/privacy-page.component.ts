@@ -1,7 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-privacy-page',
@@ -23,9 +22,7 @@ import { environment } from '../../environments/environment';
           <p>
             Administratorem danych osobowych jest Jakub Szczepański (dalej: Administrator). Kontakt:
             poprzez formularz na stronie
-            <a class="text-cyber-cyan hover:underline" [attr.href]="site + '#kontakt'"
-              >{{ site }}#kontakt</a
-            >.
+            <a class="text-cyber-cyan hover:underline" routerLink="/kontakt">/kontakt</a>.
           </p>
 
           <h2 class="mt-10 font-display text-2xl text-white">Zakres danych</h2>
@@ -75,8 +72,6 @@ import { environment } from '../../environments/environment';
 export class PrivacyPageComponent implements OnInit {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
-
-  readonly site = environment.siteUrl;
 
   ngOnInit(): void {
     this.title.setTitle('Polityka prywatności | Jakub Szczepański');

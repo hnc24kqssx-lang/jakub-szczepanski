@@ -6,13 +6,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
 import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
 import { RouterLink } from '@angular/router';
@@ -24,7 +18,6 @@ import type { PortfolioProject } from '../models/portfolio-project.model';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     ScrollRevealDirective,
     RouterLink,
     PortfolioModalComponent,
@@ -35,12 +28,10 @@ import type { PortfolioProject } from '../models/portfolio-project.model';
 export class HomeComponent implements OnInit, OnDestroy {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
-  private readonly fb = inject(FormBuilder);
 
   readonly currentYear = new Date().getFullYear();
 
   readonly activeSlide = signal(0);
-  readonly formStatus = signal<'idle' | 'sending' | 'ok' | 'err'>('idle');
 
   private slideTimer?: ReturnType<typeof setInterval>;
 
@@ -55,23 +46,69 @@ export class HomeComponent implements OnInit, OnDestroy {
   readonly stackGroups = [
     {
       title: 'Frontend i języki',
-      items: ['TypeScript', 'JavaScript (ES202+)', 'Angular', 'HTML5 / semantyka', 'SCSS / CSS', 'Tailwind CSS', 'RxJS'],
+      items: [
+        'HTML5 / semantyka',
+        'CSS / SCSS',
+        'JavaScript (ES202+)',
+        'TypeScript',
+        'Angular',
+        'Tailwind CSS',
+        'PHP',
+        'Python',
+        'Node.js',
+      ],
     },
     {
       title: 'API i integracje',
-      items: ['REST / JSON', 'GraphQL', 'OpenAPI (Swagger)', 'Webhooks', 'OAuth2 / JWT', 'WebSockets'],
+      items: [
+        'Angular',
+        'REST API / JSON',
+        'OpenAPI (Swagger)',
+        'GraphQL',
+        'Webhooks',
+        'OAuth2 / JWT',
+        'EmailJS',
+      ],
     },
     {
-      title: 'AI i automatyzacja (agenty)',
+      title: 'AI i automatyzacja',
       items: [
+        'GPT-4.1',
+        'GPT-4o',
+        'Claude 3.5 Sonnet',
+        'Gemini 1.5 Pro',
         'OpenAI API',
         'Anthropic API',
-        'MCP (Model Context Protocol)',
-        'LangChain / LCEL',
-        'RAG / embedding API',
-        'Function calling & tool use',
-        'Zapier / Make (webhooks)',
+        'Google AI API',
+        'Automatyzacje: Zapier / Make',
       ],
+    },
+  ] as const;
+
+  readonly processSteps = [
+    {
+      id: '01',
+      title: 'Rozmowa i cele',
+      description:
+        'Zaczynamy od krótkiej rozmowy o Twoim biznesie, odbiorcach i tym, co strona ma realnie dowozić.',
+    },
+    {
+      id: '02',
+      title: 'Zakres i plan działania',
+      description:
+        'Przygotowuję propozycję zakresu, estymację i kolejność prac. Od początku wiesz, co robimy i w jakim terminie.',
+    },
+    {
+      id: '03',
+      title: 'Projekt i development',
+      description:
+        'Buduję stronę etapami. Po każdym etapie dostajesz podgląd i możesz zgłaszać poprawki na bieżąco.',
+    },
+    {
+      id: '04',
+      title: 'Wdrożenie i opieka',
+      description:
+        'Publikuję stronę, konfiguruję domenę i przekazuję wszystko w uporządkowany sposób. Mogę też dalej wspierać rozwój.',
     },
   ] as const;
 
@@ -84,26 +121,26 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Autoexpress — warsztat samochodowy (Trzeszczyn)',
       primaryTag: 'Angular',
       description:
-        'Wizytówka warsztatu Autoexpress (Szymon i Piotr Pełka): diagnostyka, naprawy i obsługa flot — z formularzem i kontaktem.',
+        'Stworzyłem nowoczesną stronę warsztatu z jasną ofertą, szybkim kontaktem i prostym formularzem dla klientów.',
       modalDescription:
-        'Strona autoexpress-nine.vercel.app to jednostronicowa wizytówka pod branżę motoryzacyjną. W hero komunikowana jest kompleksowa obsługa pojazdów — od diagnostyki po naprawy — z wyraźnymi CTA: połączenie telefoniczne, przewinięcie do formularza oraz linki do Facebooka i Instagrama. Sekcja „O warsztacie” w punktach prezentuje: diagnostykę i naprawy mechaniczne, obsługę flot i aut prywatnych oraz indywidualne podejście do klienta. „Kontakt” zbiera telefon, lokalizację (Trzeszczyn), social media i formularz z polami wymaganymi, walidacją oraz zgodą na przetwarzanie danych i linkiem do polityki prywatności — zgodnie z oczekiwaniami RODO. Układ jest responsywny, typografia i hierarchia nagłówków wspierają SEO i czytelność na telefonie.',
+        'W tym projekcie skupiłem się na tym, żeby klient szybko znalazł najważniejsze informacje: zakres usług, dane kontaktowe i możliwość wysłania zapytania. Zadbana została czytelność na telefonach, wyraźne przyciski CTA oraz intuicyjna ścieżka kontaktu. Dodałem też sekcje, które budują zaufanie: opis firmy, social media i prosty formularz z walidacją.',
       stack: [
         'Angular',
         'TypeScript',
         'Tailwind CSS',
         'RxJS',
-        'Angular Forms (Reactive)',
-        'Walidatory formularza',
-        'Angular Router (kotwice / #formularz)',
-        'Responsywność mobile-first',
+        'Angular Reactive Forms',
+        'Walidacja formularza',
+        'Angular Router',
+        'Mobile-first',
         'Semantyczny HTML5',
-        'SEO (meta / tytuł strony)',
-        'Vercel (hosting statyczny)',
+        'SEO',
+        'Vercel',
       ],
       apis: [
-        'Linki tel: / kotwice do sekcji (#formularz)',
-        'Integracja z social (Facebook, Instagram — linki zewnętrzne)',
-        'Formularz kontaktowy po stronie klienta (walidacja, zgoda RODO)',
+        'EmailJS',
+        'Linki tel:',
+        'Integracje social media',
       ],
       demoUrl: 'https://autoexpress-nine.vercel.app',
       previewImage: '/photos/autoexpress.png',
@@ -113,9 +150,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Baltic Ship Chandler — zaopatrzenie jednostek morskich',
       primaryTag: 'Angular',
       description:
-        'Wizytówka ship chandlera w Szczecinie: branding morski i obsługa zaopatrzenia statków na Bałtyku.',
+        'Przygotowałem stronę firmową dla Baltic Ship Chandler, która jasno pokazuje profil działalności i wzmacnia wiarygodność marki.',
       modalDescription:
-        'Projekt balticsch.vercel.app prezentuje firmę Baltic Ship Chandler — podmiot z branży morskiej (ship chandler), specjalizujący się w zaopatrzeniu jednostek pływających, z naciskiem na region Bałtyku i Szczecin. To firma usługowa dla żeglugi, nie placówka edukacyjna: w tytule i SEO widać m.in. „Ship chandler Szczecin” oraz „Zaopatrzenie statków Bałtyk”. Strona buduje wiarygodność poprzez identyfikację wizualną (m.in. logo w zasobach) i czytelny, profesjonalny ton pod klientów z sektora maritime — z myślą o rozpoznawalności marki w branży.',
+        'Tutaj postawiłem na prosty, profesjonalny przekaz dla branży morskiej. Strona od pierwszego ekranu komunikuje, czym firma się zajmuje i dla kogo świadczy usługi. Ważne było dla mnie uporządkowanie treści pod klienta B2B: czytelne nagłówki, mocny branding i dobra widoczność kluczowych fraz związanych z zaopatrzeniem statków.',
       stack: [
         'Angular',
         'TypeScript',
@@ -123,29 +160,18 @@ export class HomeComponent implements OnInit, OnDestroy {
         'RxJS',
         'Angular Router',
         'Responsywny layout',
-        'Optymalizacja grafiki (logo / zasoby firmowe)',
+        'Optymalizacja grafiki',
         'Semantyczny HTML5',
-        'SEO (tytuł, opis pod branżę morską i lokalnie Szczecin)',
-        'Vercel (wdrożenie produkcyjne)',
+        'SEO',
+        'Vercel',
       ],
       apis: [
-        'Statyczne zasoby (logo / company-photos)',
-        'Branding pod sektor maritime (ship chandler)',
+        'REST API (możliwość integracji)',
+        'Integracje formularzy',
+        'Integracje social media',
       ],
       demoUrl: 'https://balticsch.vercel.app',
       previewImage: '/photos/balticsch.png',
-    },
-    {
-      id: 'private-slot',
-      title: 'System wewnętrzny — NDA',
-      primaryTag: 'Node.js',
-      description: 'Aplikacja prywatna — szczegóły po kontakcie.',
-      modalDescription:
-        'Backend z autoryzacją JWT, panel administracyjny i integracja z bazą dokumentów. Ze względu na NDA nie udostępniam publicznego podglądu — mogę opisać architekturę na spotkaniu.',
-      stack: ['Node.js', 'Express', 'MongoDB', 'Docker', 'JWT'],
-      apis: ['REST', 'Webhooks', 'Stripe (placeholder)'],
-      demoUrl: 'https://example.com',
-      isPrivate: true,
     },
   ];
 
@@ -160,12 +186,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.modalProject.set(null);
     this.modalOrigin.set(null);
   }
-
-  readonly contactForm = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
-    message: ['', [Validators.required, Validators.minLength(10)]],
-  });
 
   ngOnInit(): void {
     this.title.setTitle(
@@ -195,41 +215,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.slideTimer) clearInterval(this.slideTimer);
-  }
-
-  async onSubmit(): Promise<void> {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-      return;
-    }
-    const { emailjs: e } = environment;
-    if (
-      e.publicKey === 'YOUR_PUBLIC_KEY' ||
-      e.serviceId === 'YOUR_SERVICE_ID' ||
-      e.templateId === 'YOUR_TEMPLATE_ID'
-    ) {
-      this.formStatus.set('err');
-      return;
-    }
-
-    this.formStatus.set('sending');
-    const v = this.contactForm.getRawValue();
-    try {
-      await emailjs.send(
-        e.serviceId,
-        e.templateId,
-        {
-          from_name: v.name,
-          from_email: v.email,
-          message: v.message,
-          reply_to: v.email,
-        },
-        { publicKey: e.publicKey },
-      );
-      this.formStatus.set('ok');
-      this.contactForm.reset();
-    } catch {
-      this.formStatus.set('err');
-    }
   }
 }

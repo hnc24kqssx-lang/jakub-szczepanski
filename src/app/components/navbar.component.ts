@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
       <main z-[1]> nie może już przykryć headera (z-[110] w root context).
     -->
 
-    <!-- Overlay + panel: z-[100] w globalnym kontekście, nad main z-[1] -->
+    <!-- Overlay + panel: z-[100] w globalnym kontekście -->
     <div
       class="mobile-menu-root fixed inset-0 z-[100] md:hidden"
       [class.is-open]="menuOpen()"
@@ -54,7 +54,7 @@ import { RouterLink } from '@angular/router';
       </nav>
     </div>
 
-    <!-- Header: z-[110] w globalnym kontekście, nad menu overlay (z-100) i main (z-1) -->
+    <!-- Header: z-[110] w globalnym kontekście -->
     <header
       class="fixed left-0 right-0 top-0 z-[110] border-b border-cyber-line/40 bg-cyber-void/85 backdrop-blur-md transition-shadow duration-300"
       [class.shadow-neon]="scrolled()"
@@ -123,7 +123,7 @@ export class NavbarComponent {
     { label: 'Stack', href: '/#stack' },
     { label: 'Certyfikaty', href: '/#certyfikaty' },
     { label: 'Portfolio', href: '/#portfolio' },
-    { label: 'Kontakt', href: '/#kontakt' },
+    { label: 'Kontakt', href: '/kontakt' },
   ] as const;
 
   @HostListener('window:scroll')
