@@ -85,7 +85,7 @@ import { CommonModule } from '@angular/common';
           <p
             class="loading-label font-mono text-sm tracking-[0.35em] text-cyber-ice/90"
           >
-            INITIALIZING INTERFACE<span class="loading-cursor inline-block w-[2px]">▍</span>
+            WCZYTYWANIE SERWISU<span class="loading-cursor inline-block w-[2px]">▍</span>
           </p>
 
           <div

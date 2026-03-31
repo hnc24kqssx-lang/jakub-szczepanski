@@ -3,7 +3,7 @@
   <section
     id="hero"
     class="relative z-[2] min-h-[88vh] overflow-hidden border-b border-cyber-line/40 bg-cyber-void"
-    aria-label="Wprowadzenie"
+    aria-label="Sekcja wprowadzająca"
   >
     <div class="absolute inset-0 bg-cyber-void">
       @for (src of heroImages; track src; let i = $index) {
@@ -68,7 +68,7 @@
       >
         <span class="text-2xl text-cyber-cyan">✦</span>
       </div>
-      <p class="mt-3 text-right">LIVE<br />PREVIEW</p>
+      <p class="mt-3 text-right">PODGLĄD<br />ONLINE</p>
     </div>
 
     <!-- Giant name -->
@@ -78,7 +78,7 @@
       <p
         class="mb-2 max-w-xl font-mono text-xs uppercase tracking-[0.35em] text-cyber-ice/85 md:text-sm"
       >
-        Tworzenie stron internetowych · interfejsy premium
+        Projektowanie i wdrażanie witryn · front-end i integracje
       </p>
       <h1
         class="font-display text-[clamp(2.75rem,12vw,8rem)] font-bold uppercase leading-[0.85] tracking-tight text-white text-glow animate-glitch"
@@ -89,9 +89,9 @@
       <p
         class="mt-6 max-w-lg font-body text-base leading-relaxed text-slate-300 md:text-lg"
       >
-        Projektuję i koduję witryny — szybkie, czytelne i
-        nastawione na konwersję. Jeśli szukasz partnera technicznego z dokumentem INF za pasem,
-        jesteś we właściwym miejscu.
+        Projektuję oraz implementuję witryny internetowe z naciskiem na wydajność, czytelność
+        interfejsu i mierzalne cele biznesowe. Współpracuję z klientami, którym zależy na rzetelnej
+        realizacji technicznej oraz przejrzystej komunikacji na poszczególnych etapach projektu.
       </p>
 
       <div
@@ -107,20 +107,20 @@
           ></div>
           <div class="min-w-0">
             <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-cyber-cyan">
-              Ostatni kierunek
+              Realizacje
             </p>
-            <p class="truncate font-body text-sm text-slate-200">Portfolio — podgląd na żywo</p>
+            <p class="truncate font-body text-sm text-slate-200">Portfolio — wdrożenia demonstracyjne</p>
             <span
               class="mt-1 inline-flex items-center gap-1 font-mono text-xs text-cyber-ice/80 transition group-hover:gap-2"
-              >Zobacz realizacje →</span
+              >Przejdź do portfolio →</span
             >
           </div>
         </a>
 
         <div class="max-w-md text-right">
           <p class="font-body text-sm italic text-slate-400 md:text-base">
-            Dbam o to, by Twoja marka brzmiała nowocześnie w sieci — od pierwszego kontaktu po
-            wdrożenie.
+            Priorytetem jest spójna komunikacja marki w kanale online — od struktury treści po warstwę
+            wizualną i techniczną wdrożenia.
           </p>
           <a
             href="/#portfolio"
@@ -139,7 +139,128 @@
     <div
       class="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] tracking-widest text-cyber-ice/50"
     >
-      SCROLL
+      PRZEWIŃ
+    </div>
+  </section>
+
+  <!-- Dlaczego wizytówka -->
+  <section
+    id="dlaczego-wizytowka"
+    class="why-visit-section relative overflow-hidden border-b border-cyber-line/35 py-16 md:py-24"
+    aria-labelledby="why-visit-heading"
+  >
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-cyber-deep/80 via-cyber-void to-cyber-deep/60"></div>
+    <div class="why-visit-aurora pointer-events-none absolute -left-1/4 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-cyber-cyan/10 blur-[100px] md:left-0"></div>
+    <div
+      class="pointer-events-none absolute -right-1/4 bottom-0 h-[320px] w-[320px] rounded-full bg-cyber-ice/5 blur-[90px] md:right-10"
+    ></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 md:px-10">
+      <header class="mb-12 max-w-3xl" appScrollReveal>
+        <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Wartość biznesowa</p>
+        <h2
+          id="why-visit-heading"
+          class="mt-3 font-display text-[clamp(1.75rem,5vw,3.25rem)] font-bold uppercase leading-[1.05] tracking-tight text-white md:tracking-wide"
+        >
+          Dlaczego strony wizytówki mają takie znaczenie?
+        </h2>
+        <p class="mt-5 font-body text-base leading-relaxed text-slate-300 md:text-lg">
+          W praktyce pierwszy kontakt z marką to często wyszukiwarka albo odnośnik z profilu w mediach
+          społecznościowych — jeszcze przed rozmową czy wiadomością. Z tego powodu
+          <strong class="font-medium text-cyber-ice">aktualna strona wizytówki</strong> pełni rolę
+          potwierdzenia wiarygodności: pokazuje, że firma jest aktywna, dba o jakość komunikacji i
+          transparentnie prezentuje ofertę.
+          <strong class="font-medium text-cyber-ice">Witryna zrobiona na czasie</strong> — szybka,
+          responsywna i poprawna technicznie (m.in. certyfikat, brak zastrzeżeń przeglądarki co do
+          bezpieczeństwa) — utrzymuje użytkownika przy treści zamiast zniechęcać już na wejściu.
+        </p>
+      </header>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article
+          class="why-visit-card group relative rounded-2xl border border-cyber-line/45 bg-cyber-panel/25 p-6 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.08)] backdrop-blur-md md:p-8"
+          appScrollReveal
+        >
+          <div
+            class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyber-cyan/25 bg-cyber-cyan/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-cyber-cyan"
+          >
+            Marketing firmy
+          </div>
+          <h3 class="font-body text-xl font-semibold text-white md:text-2xl">
+            Perspektywa marketingu i sprzedaży
+          </h3>
+          <p class="mt-3 font-body text-sm leading-relaxed text-slate-400">
+            Chodzi o uporządkowany scenariusz: odbiorca szybko rozumie zakres usług, widzi argumenty za
+            współpracą i przechodzi do kontaktu bez zbędnych kroków — bez chaosu w nawigacji i bez
+            domyślania się, czym firma się zajmuje.
+          </p>
+          <ul class="mt-6 space-y-4">
+            @for (p of whyMarketingPoints; track p.title) {
+              <li class="flex gap-3">
+                <span
+                  class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyber-cyan shadow-[0_0_10px_rgba(0,212,255,0.6)]"
+                  aria-hidden="true"
+                ></span>
+                <div>
+                  <p class="font-body font-medium text-slate-100">{{ p.title }}</p>
+                  <p class="mt-1 font-body text-sm leading-relaxed text-slate-400">{{ p.text }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </article>
+
+        <article
+          class="why-visit-card group relative rounded-2xl border border-cyber-cyan/20 bg-gradient-to-br from-cyber-panel/40 via-cyber-deep/50 to-cyber-panel/30 p-6 shadow-neon backdrop-blur-md md:p-8"
+          appScrollReveal
+        >
+          <div
+            class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyber-ice/20 bg-cyber-ice/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-cyber-ice"
+          >
+            Na czasie
+          </div>
+          <h3 class="font-body text-xl font-semibold text-white md:text-2xl">
+            Nowoczesna witryna zamiast przestarzałego wdrożenia
+          </h3>
+          <p class="mt-3 font-body text-sm leading-relaxed text-slate-400">
+            Przestarzały interfejs i niska wydajność obniżają postrzeganą jakość marki oraz utrudniają
+            efektywne prowadzenie kampanii reklamowych i prace nad widocznością organiczną. Projekt
+            dopasowany do dzisiejszych standardów to inwestacja w wynik biznesowy, nie wyłącznie w warstwę
+            wizualną — także w komfort pracy osób odpowiedzialnych za technologię po stronie klienta.
+          </p>
+          <ul class="mt-6 space-y-4">
+            @for (p of whyModernPoints; track p.title) {
+              <li class="flex gap-3">
+                <span
+                  class="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-cyber-cyan/40 font-mono text-[10px] text-cyber-cyan"
+                  aria-hidden="true"
+                  >✓</span
+                >
+                <div>
+                  <p class="font-body font-medium text-slate-100">{{ p.title }}</p>
+                  <p class="mt-1 font-body text-sm leading-relaxed text-slate-400">{{ p.text }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </article>
+      </div>
+
+      <div
+        class="why-visit-cta mt-10 flex flex-col items-start justify-between gap-4 rounded-xl border border-cyber-line/40 bg-cyber-void/60 px-5 py-5 md:flex-row md:items-center md:px-8"
+        appScrollReveal
+      >
+        <p class="max-w-2xl font-body text-sm text-slate-400">
+          <span class="text-slate-200">Dobrze zaprojektowana wizytówka</span> wspiera wizerunek i proces
+          pozyskiwania leadów jeszcze przed pierwszą rozmową — odbiorca buduje opinię na podstawie treści,
+          struktury i jakości technicznej serwisu. Jeśli chcesz połączyć implementację z przygotowaniem
+          treści w ramach jednego zakresu prac, zapraszam do
+          <a routerLink="/kontakt" class="text-cyber-cyan underline-offset-4 hover:underline"
+            >kontaktu</a
+          >
+          w celu omówienia wymagań, harmonogramu oraz modelu współpracy.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -156,9 +277,9 @@
           Technologie i API
         </h2>
         <p class="mt-4 font-body text-slate-400">
-          Zestaw narzędzi, który pozwala budować szybkie fronty i bezpiecznie łączyć je z
-          backendem oraz ekosystemem agentów AI — tak, by Twój biznes mógł automatyzować bez
-          utraty kontroli.
+          Wykorzystywane przeze mnie technologie umożliwiają budowę wydajnych interfejsów,
+          bezpieczną komunikację z warstwą serwerową oraz — w uzasadnionych przypadkach — integrację z
+          usługami i agentami AI przy zachowaniu przejrzystości procesu i kontroli nad danymi.
         </p>
       </div>
       <div class="grid gap-8 md:grid-cols-3">
@@ -192,13 +313,14 @@
   >
     <div class="mx-auto max-w-7xl px-4 md:px-10">
       <div class="mb-10 max-w-3xl">
-        <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Jak wygląda współpraca</p>
+        <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Model współpracy</p>
         <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
-          Proces krok po kroku
+          Etapy realizacji
         </h2>
         <p class="mt-4 font-body text-slate-400">
-          Pracuję w prostym, przejrzystym modelu. W każdym etapie wiesz, co jest robione, po co i
-          kiedy dostaniesz kolejny efekt.
+          Stosuję przejrzysty podział prac: na każdym etapie określone są cele, zakres działań oraz
+          oczekiwany rezultat, tak aby Klient miał pełną widoczność postępów i mógł bieżąco zgłaszać
+          uwagi.
         </p>
       </div>
 
@@ -232,21 +354,22 @@
       <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div>
           <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">
-            Wykształcenie i certyfikaty
+            Kwalifikacje zawodowe
           </p>
           <h2 class="mt-2 font-display text-4xl uppercase tracking-wide text-white md:text-5xl">
-            Technikum + INF
+            Wykształcenie i kwalifikacje
           </h2>
           <p class="mt-4 font-body leading-relaxed text-slate-400">
-            Ukończyłem technikum informatyczne i uzyskałem tytuł
-            <strong class="font-medium text-cyber-ice">Technik IT</strong>. Dzięki temu mam solidne
-            podstawy w administracji systemami, sieciach i tworzeniu aplikacji webowych.
+            Ukończyłem technikum o profilu informatycznym i uzyskałem tytuł zawodowy
+            <strong class="font-medium text-cyber-ice">technika informatyka (Technik IT)</strong>. Program
+            kształcenia obejmował m.in. administrację systemami, sieci komputerowe oraz podstawy
+            projektowania i utrzymania aplikacji webowych.
           </p>
           <p class="mt-4 font-body leading-relaxed text-slate-400">
-            Posiadam certyfikaty
+            Posiadam państwowe certyfikaty kwalifikacyjne
             <strong class="text-cyber-ice">INF.02</strong> oraz
-            <strong class="text-cyber-ice">INF.03</strong>, które potwierdzają praktyczne umiejętności
-            od infrastruktury IT po strony i aplikacje internetowe.
+            <strong class="text-cyber-ice">INF.03</strong>, potwierdzające kompetencje w zakresie
+            infrastruktury IT oraz tworzenia i administrowania stronami i aplikacjami internetowymi.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
@@ -288,8 +411,9 @@
             Wybrane realizacje
           </h2>
           <p class="mt-4 font-body text-slate-400">
-            Kliknij kafelek, aby zobaczyć stack, API i krótki opis — modal rozwinie się z miejsca
-            karty. „Live demo” otwiera stronę w nowej karcie bez otwierania modala.
+            Po wybraniu karty otwiera się okno szczegółów z opisem projektu, zestawem technologii oraz
+            integracjami. Przycisk uruchomienia wersji demonstracyjnej otwiera wdrożenie w nowej karcie
+            przeglądarki, bez konieczności zamykania podglądu.
           </p>
         </div>
       </div>
@@ -324,7 +448,7 @@
                     />
                   </svg>
                   <p class="text-center font-mono text-[11px] text-slate-500">
-                    Aplikacja prywatna — brak podglądu
+                    Projekt poufny — brak publicznego podglądu
                   </p>
                 </div>
               } @else {
@@ -349,7 +473,7 @@
                   class="pointer-events-auto rounded-full border border-cyber-cyan/60 bg-cyber-cyan/15 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 active:scale-[0.97]"
                   (click)="$event.stopPropagation()"
                 >
-                  Live demo →
+                  Demo online →
                 </a>
               </div>
             </div>
@@ -396,17 +520,18 @@
         <div class="max-w-xl">
           <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Kontakt</p>
           <h2 class="mt-2 font-display text-3xl uppercase text-white md:text-4xl">
-            Porozmawiajmy o Twoim projekcie
+            Zapytanie ofertowe i kontakt
           </h2>
           <p class="mt-3 font-body text-slate-400">
-            Przejdź do podstrony kontaktu, gdzie znajdziesz formularz i moje dane kontaktowe.
+            Zapraszam na dedykowaną podstronę kontaktową: formularz, dane teleadresowe oraz profile w
+            mediach społecznościowych.
           </p>
         </div>
         <a
           routerLink="/kontakt"
           class="inline-flex items-center gap-3 rounded-full border border-cyber-cyan bg-cyber-cyan/15 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyber-cyan shadow-neon transition hover:bg-cyber-cyan/25 active:scale-[0.98]"
         >
-          Rozpocznij kontakt
+          Formularz kontaktowy
         </a>
       </div>
     </div>
@@ -422,7 +547,7 @@
     <div
       class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center font-mono text-xs text-slate-500 md:flex-row md:text-left md:px-10"
     >
-      <span>© {{ currentYear }} Jakub Szczepański. Wszystkie prawa zastrzeżone.</span>
+      <span>© {{ currentYear }} Jakub Szczepański. Wszelkie prawa zastrzeżone.</span>
       <a
         routerLink="/polityka-prywatnosci"
         class="text-cyber-cyan/80 underline-offset-4 transition hover:text-cyber-cyan hover:underline active:scale-[0.98]"

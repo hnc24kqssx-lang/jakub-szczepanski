@@ -120,6 +120,7 @@ export class NavbarComponent {
 
   readonly links = [
     { label: 'Start', href: '/#hero' },
+    { label: 'Strona wizytówki', href: '/#dlaczego-wizytowka' },
     { label: 'Stack', href: '/#stack' },
     { label: 'Certyfikaty', href: '/#certyfikaty' },
     { label: 'Portfolio', href: '/#portfolio' },

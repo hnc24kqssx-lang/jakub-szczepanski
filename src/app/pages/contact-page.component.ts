@@ -20,7 +20,7 @@ import { environment } from '../../environments/environment';
         <a
           routerLink="/"
           class="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan transition hover:text-cyber-ice"
-          >← Powrót na stronę główną</a
+          >← Powrót do strony głównej</a
         >
 
         <div class="mt-8 grid gap-10 lg:grid-cols-2">
@@ -28,11 +28,12 @@ import { environment } from '../../environments/environment';
             <div>
               <p class="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan">Kontakt</p>
               <h1 class="mt-2 font-display text-4xl uppercase text-white md:text-5xl">
-                Napisz lub zadzwoń
+                Zapytania ofertowe i kanały kontaktu
               </h1>
               <p class="mt-4 font-body text-slate-300">
-                Odpowiadam na wiadomości dotyczące stron internetowych, modernizacji istniejących
-                projektów i stałej współpracy.
+                Obsługuję zapytania dotyczące nowych wdrożeń witryn, modernizacji istniejących serwisów
+                oraz — po uzgodnieniu — długoterminowej opieki technicznej. Proszę dołączyć w wiadomości
+                orientacyjny zakres i, jeśli to możliwe, preferowany termin realizacji.
               </p>
             </div>
 
@@ -118,7 +119,7 @@ import { environment } from '../../environments/environment';
               formControlName="message"
               rows="6"
               class="w-full resize-y rounded border border-cyber-line bg-cyber-deep/80 px-4 py-3 font-body text-slate-100 outline-none ring-cyber-cyan/40 transition placeholder:text-slate-600 focus:border-cyber-cyan focus:ring-2"
-              placeholder="Opisz projekt, budżet i termin..."
+              placeholder="Proszę opisać zakres (np. branża, liczba podstron, integracje), orientacyjny budżet oraz preferowany termin…"
             ></textarea>
             @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
               <p class="mt-1 text-xs text-red-400">Minimum 10 znaków.</p>
@@ -130,20 +131,21 @@ import { environment } from '../../environments/environment';
               [disabled]="formStatus() === 'sending'"
             >
               @if (formStatus() === 'sending') {
-                Wysyłanie…
+                Wysyłanie wiadomości…
               } @else {
-                Wyślij
+                Wyślij wiadomość
               }
             </button>
 
             @if (formStatus() === 'ok') {
               <p class="font-mono text-sm text-emerald-400" role="status">
-                Wysłano. Dziękuję — odezwę się wkrótce.
+                Wiadomość została wysłana. Odpowiedź udzielę w możliwie najkrótszym terminie roboczym.
               </p>
             }
             @if (formStatus() === 'err') {
               <p class="font-mono text-sm text-red-400" role="alert">
-                Nie udało się wysłać. Sprawdź konfigurację EmailJS i spróbuj ponownie.
+                Nie udało się nadać wiadomości. Proszę spróbować ponownie później lub skontaktować się
+                bezpośrednio telefonicznie bądź pocztą elektroniczną.
               </p>
             }
           </form>
@@ -166,11 +168,11 @@ export class ContactPageComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.title.setTitle('Kontakt | Jakub Szczepański — Web Developer');
+    this.title.setTitle('Kontakt | Jakub Szczepański — witryny internetowe');
     this.meta.updateTag({
       name: 'description',
       content:
-        'Skontaktuj się ze mną w sprawie strony internetowej. Telefon, e-mail, social media i formularz kontaktowy.',
+        'Formularz kontaktowy, telefon, e-mail oraz profile w mediach społecznościowych — zapytania ofertowe dotyczące wdrożeń WWW.',
     });
   }
 

@@ -43,6 +43,44 @@ export class HomeComponent implements OnInit, OnDestroy {
     'https://images.unsplash.com/photo-1517180101976-9df8eac83cc0?auto=format&fit=crop&w=1920&q=80',
   ] as const;
 
+  readonly whyMarketingPoints = [
+    {
+      title: 'Weryfikacja w sieci przed pierwszym kontaktem',
+      text: 'Klienci i partnerzy zwykle sprawdzają firmę online, zanim nawiążą rozmowę. Aktualna, spójna witryna buduje wiarygodność i profesjonalny wizerunek już na etapie pierwszego wejścia.',
+    },
+    {
+      title: 'Informacja dostępna poza godzinami pracy',
+      text: 'Oferta, realizacje i dane kontaktowe są widoczne całą dobę — bez konieczności bieżącej obsługi kanałów bezpośrednich. To stały punkt styku z marką przy relatywnie niskim koszcie utrzymania.',
+    },
+    {
+      title: 'Spójność komunikatu i identyfikacji',
+      text: 'Ten sam przekaz, estetyka i obietnica co w materiałach sprzedażowych i w social media ograniczają chaos w odbiorze. Ułatwia to zapamiętanie marki i zaufanie do niej.',
+    },
+    {
+      title: 'Krótka ścieżka do kontaktu',
+      text: 'Jasny opis usług, argumenty „dlaczego warto” oraz wyraźne wezwanie do działania (formularz, telefon, e-mail) zmniejszają tarcie — użytkownik wie, co zrobić dalej, zamiast szukać informacji po całej witrynie.',
+    },
+  ] as const;
+
+  readonly whyModernPoints = [
+    {
+      title: 'Wydajność i poprawny widok na urządzeniach mobilnych',
+      text: 'Znaczna część ruchu pochodzi ze smartfonów. Opóźnienia ładowania i słaba ergonomia na małym ekranie zwiększają współczynnik porzuceń — bez względu na jakość samej oferty.',
+    },
+    {
+      title: 'Utrzymanie techniczne pod kontrolą',
+      text: 'Nowoczesna implementacja ułatwia HTTPS, aktualizacje zależności i kopie zapasowe. Dla zespołu IT lub osoby odpowiedzialnej za infrastrukturę oznacza to mniejsze ryzyko i przewidywalniejszy koszt utrzymania niż w przypadku przestarzałego CMS bez wsparcia.',
+    },
+    {
+      title: 'Przygotowanie pod reklamy i widoczność w wyszukiwarce',
+      text: 'Szybka, semantycznie poprawna strona z czytelną strukturą ułatwia kampanie płatne oraz prace SEO — bez konieczności przebudowy połowy serwisu w trakcie projektu marketingowego.',
+    },
+    {
+      title: 'Skalowalność pod rozwój organizacji',
+      text: 'Nowe usługi, wersje językowe, integracje z CRM czy narzędziami analitycznymi — sensownie zaprojektowana wizytówka da się rozbudować. Przeciwny przypadek często kończy się kosztownym startem od zera po kilkunastu miesiącach.',
+    },
+  ] as const;
+
   readonly stackGroups = [
     {
       title: 'Frontend i języki',
@@ -88,27 +126,27 @@ export class HomeComponent implements OnInit, OnDestroy {
   readonly processSteps = [
     {
       id: '01',
-      title: 'Rozmowa i cele',
+      title: 'Analiza potrzeb i cele',
       description:
-        'Zaczynamy od krótkiej rozmowy o Twoim biznesie, odbiorcach i tym, co strona ma realnie dowozić.',
+        'Rozpoczynamy od ustaleń co do profilu działalności, grupy docelowej oraz mierzalnych oczekiwań wobec witryny (np. generowanie zapytań, prezentacja oferty, wsparcie sprzedaży).',
     },
     {
       id: '02',
-      title: 'Zakres i plan działania',
+      title: 'Zakres, harmonogram, koszt',
       description:
-        'Przygotowuję propozycję zakresu, estymację i kolejność prac. Od początku wiesz, co robimy i w jakim terminie.',
+        'Przygotowuję propozycję zakresu prac, wstępną estymację nakładów oraz harmonogram etapów, aby od początku były jasne deliverables i terminy.',
     },
     {
       id: '03',
-      title: 'Projekt i development',
+      title: 'Realizacja i iteracje',
       description:
-        'Buduję stronę etapami. Po każdym etapie dostajesz podgląd i możesz zgłaszać poprawki na bieżąco.',
+        'Wdrożenie prowadzone jest etapami; po każdym etapie udostępniany jest podgląd, a uwagi i korekty są włączane na bieżąco, zgodnie z ustalonym modelem feedbacku.',
     },
     {
       id: '04',
-      title: 'Wdrożenie i opieka',
+      title: 'Publikacja i przekazanie',
       description:
-        'Publikuję stronę, konfiguruję domenę i przekazuję wszystko w uporządkowany sposób. Mogę też dalej wspierać rozwój.',
+        'Publikacja na docelowym hostingu, konfiguracja domeny oraz przekazanie dokumentacji i dostępów w uporządzonej formie. Po wdrożeniu możliwa jest dalsza opieka rozwojowa — według osobnych ustaleń.',
     },
   ] as const;
 
@@ -121,9 +159,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Autoexpress — warsztat samochodowy (Trzeszczyn)',
       primaryTag: 'Angular',
       description:
-        'Stworzyłem nowoczesną stronę warsztatu z jasną ofertą, szybkim kontaktem i prostym formularzem dla klientów.',
+        'Witryna warsztatu: przejrzysta prezentacja usług, dane kontaktowe oraz formularz zapytania — z myślą o użytkownikach mobilnych.',
       modalDescription:
-        'W tym projekcie skupiłem się na tym, żeby klient szybko znalazł najważniejsze informacje: zakres usług, dane kontaktowe i możliwość wysłania zapytania. Zadbana została czytelność na telefonach, wyraźne przyciski CTA oraz intuicyjna ścieżka kontaktu. Dodałem też sekcje, które budują zaufanie: opis firmy, social media i prosty formularz z walidacją.',
+        'Priorytetem było skrócenie ścieżki do informacji kluczowych: zakres usług, lokalizacja i kontakt, wraz z możliwością wysłania wiadomości z poziomu strony. Zastosowano układ responsywny, wyraźne wezwania do działania oraz walidację pól formularza. Dodatkowe sekcje (m.in. opis działalności, odnośniki do profili społecznościowych) wspierają wiarygodność marki w kanale online.',
       stack: [
         'Angular',
         'TypeScript',
@@ -150,9 +188,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Baltic Ship Chandler — zaopatrzenie jednostek morskich',
       primaryTag: 'Angular',
       description:
-        'Przygotowałem stronę firmową dla Baltic Ship Chandler, która jasno pokazuje profil działalności i wzmacnia wiarygodność marki.',
+        'Serwis firmowy dla operatora zaopatrzenia jednostek pływających: klarowny przekaz branżowy, treści pod odbiorcę B2B oraz spójna identyfikacja wizualna.',
       modalDescription:
-        'Tutaj postawiłem na prosty, profesjonalny przekaz dla branży morskiej. Strona od pierwszego ekranu komunikuje, czym firma się zajmuje i dla kogo świadczy usługi. Ważne było dla mnie uporządkowanie treści pod klienta B2B: czytelne nagłówki, mocny branding i dobra widoczność kluczowych fraz związanych z zaopatrzeniem statków.',
+        'Projekt adresowany do segmentu morskiego B2B: już na pierwszym ekranie prezentowany jest profil działalności i grupa odbiorców. Treść uporządkowano pod kątem skanowania nagłówków i szybkiego dotarcia do informacji operacyjnych; nacisk położono na spójność z identyfikacją marki oraz na czytelność fraz związanych z zaopatrzeniem statków i logistyką portową.',
       stack: [
         'Angular',
         'TypeScript',
@@ -170,7 +208,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         'Integracje formularzy',
         'Integracje social media',
       ],
-      demoUrl: 'https://balticsch.vercel.app',
+      demoUrl: 'https://balticshipch.vercel.app',
       previewImage: '/photos/balticsch.png',
     },
   ];
@@ -189,19 +227,24 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.title.setTitle(
-      'Jakub Szczepański — tworzenie stron internetowych | Web Developer',
+      'Jakub Szczepański — projektowanie i wdrażanie witryn internetowych',
     );
     this.meta.addTags([
       {
         name: 'description',
         content:
-          'Programista stron internetowych. Technikum informatyczne, certyfikaty INF.02 i INF.03. Angular, Tailwind, API i integracje AI. Zapytaj o wycenę.',
+          'Wdrożenia witryn WWW, front-end (m.in. Angular, Tailwind), integracje API. Wykształcenie informatyczne, certyfikaty kwalifikacyjne INF.02 i INF.03. Zapytania ofertowe — strona kontaktowa.',
       },
-      { name: 'keywords', content: 'web developer, strony www, Angular, Tailwind, INF.02, INF.03, AI API' },
-      { property: 'og:title', content: 'Jakub Szczepański — Web Developer' },
+      {
+        name: 'keywords',
+        content:
+          'strony internetowe, web developer, Angular, TypeScript, Tailwind, INF.02, INF.03, integracje API, front-end',
+      },
+      { property: 'og:title', content: 'Jakub Szczepański — witryny internetowe i front-end' },
       {
         property: 'og:description',
-        content: 'Nowoczesne strony i integracje. Portfolio na żywo, kontakt w jednym miejscu.',
+        content:
+          'Realizacje demonstracyjne, opis kompetencji technicznych oraz dane kontaktowe — w jednym serwisie.',
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: environment.siteUrl },

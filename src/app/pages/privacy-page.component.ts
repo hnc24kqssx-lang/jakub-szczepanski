@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
           >← Powrót na stronę główną</a
         >
         <h1 class="mt-8 font-display text-4xl uppercase text-white md:text-5xl">Polityka prywatności</h1>
-        <p class="mt-4 font-mono text-xs text-slate-500">Ostatnia aktualizacja: marzec 2025</p>
+        <p class="mt-4 font-mono text-xs text-slate-500">Ostatnia aktualizacja: kwiecień 2026</p>
 
         <div class="prose prose-invert mt-10 max-w-none font-body text-slate-300">
           <h2 class="font-display text-2xl text-white">Administrator</h2>
@@ -77,7 +77,8 @@ export class PrivacyPageComponent implements OnInit {
     this.title.setTitle('Polityka prywatności | Jakub Szczepański');
     this.meta.updateTag({
       name: 'description',
-      content: 'Polityka prywatności i informacje o przetwarzaniu danych osobowych.',
+      content:
+        'Polityka prywatności serwisu: administrator, zakres danych, cele przetwarzania, cookies, EmailJS.',
     });
   }
 }
